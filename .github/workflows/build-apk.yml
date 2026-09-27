@@ -38,9 +38,23 @@ jobs:
       - name: Descargar dependencias
         run: flutter pub get
 
-      # 5. Compila el APK en modo release.
+      # 5. Compila el APK en modo release (guardando el log completo).
       - name: Compilar APK
-        run: flutter build apk --release
+        run: |
+          set -o pipefail
+          flutter build apk --release --verbose 2>&1 | tee build.log
+
+      # Si la compilación falla, guarda el log dentro del repo para diagnóstico.
+      - name: Guardar log si falla
+        if: failure()
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "github-actions"
+          mkdir -p ci-logs
+          tail -n 400 build.log > ci-logs/last-build-error.log || true
+          git add -f ci-logs/last-build-error.log
+          git commit -m "CI: log de compilación fallida [skip ci]" || true
+          git push || true
 
       # 6a. Sube el APK como "artefacto" (descargable desde la pestaña Actions).
       - name: Guardar APK como artefacto

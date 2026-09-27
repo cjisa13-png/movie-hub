@@ -19,8 +19,11 @@ pluginManagement {
 
 plugins {
     id("dev.flutter.flutter-plugin-loader") version "1.0.0"
-    id("com.android.application") version "9.1.0" apply false
-    id("org.jetbrains.kotlin.android") version "2.4.0" apply false
+    // Versiones estables y compatibles con flutter_inappwebview (reproductor de
+    // YouTube). Las que Flutter genera por defecto (AGP 9.x) son demasiado
+    // nuevas para ese plugin y rompen la compilación.
+    id("com.android.application") version "8.7.3" apply false
+    id("org.jetbrains.kotlin.android") version "2.1.0" apply false
 }
 
 include(":app")
