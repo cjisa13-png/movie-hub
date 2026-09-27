@@ -23,7 +23,7 @@ plugins {
     // YouTube). Las que Flutter genera por defecto (AGP 9.x) son demasiado
     // nuevas para ese plugin y rompen la compilación.
     id("com.android.application") version "8.11.1" apply false
-    id("org.jetbrains.kotlin.android") version "2.1.0" apply false
+    id("org.jetbrains.kotlin.android") version "2.2.20" apply false
 }
 
 include(":app")
