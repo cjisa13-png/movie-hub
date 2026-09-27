@@ -1,5 +1,5 @@
 [        ] Evaluating root project 'android' using build file '/home/runner/work/movie-hub/movie-hub/android/build.gradle.kts'.
-[        ] Caching disabled for Kotlin DSL plugin specs accessors for classpath 'ce11848c105bc31db04627066a8d8f25' because:
+[        ] Caching disabled for Kotlin DSL plugin specs accessors for classpath '5bf479c4f350b787523bc3c3681516d5' because:
 [        ]   Build cache is disabled
 [        ] Caching disabled for Kotlin DSL script compilation (Project/TopLevel/stage1) because:
 [        ]   Build cache is disabled
@@ -7,7 +7,7 @@
 [        ]   Build cache is disabled
 [        ] Caching disabled for Kotlin DSL script compilation (Project/TopLevel/stage2) because:
 [        ]   Build cache is disabled
-[ +103 ms] > Configure project :app
+[ +500 ms] > Configure project :app
 [        ] Evaluating project ':app' using build file '/home/runner/work/movie-hub/movie-hub/android/app/build.gradle.kts'.
 [        ] Caching disabled for Kotlin DSL script compilation (Project/TopLevel/stage1) because:
 [        ]   Build cache is disabled
@@ -22,23 +22,26 @@
 [        ] Using Kotlin Gradle Plugin gradle85 variant
 [        ] Using Kotlin Gradle Plugin gradle85 variant
 [        ] Using Kotlin Gradle Plugin gradle85 variant
-[        ] [Incubating] Problems report is available at: file:///home/runner/work/movie-hub/movie-hub/android/build/reports/problems/problems-report.html
 [        ] Warning: Flutter support for your project's Gradle version (8.14.3) will soon be dropped. Please upgrade your Gradle version to a version of at least 9.1.0 soon.
-[   +4 ms] Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
+[   +2 ms] Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
 [        ] Potential fix: Your project's gradle version is typically defined in the gradle wrapper file. By default, this can be found at /home/runner/work/movie-hub/movie-hub/android/gradle/wrapper/gradle-wrapper.properties. 
 [        ] For more information, see https://docs.gradle.org/current/userguide/gradle_wrapper.html.
-[        ] FAILURE: Build failed with an exception.
+[        ] Warning: Flutter support for your project's Android Gradle Plugin version (Android Gradle Plugin version 8.11.1) will soon be dropped. Please upgrade your Android Gradle Plugin version to a version of at least Android Gradle Plugin version 9.0.1 soon.
+[        ] Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
+[        ] Potential fix: Your project's AGP version is typically defined in the plugins block of the `settings.gradle` file (/home/runner/work/movie-hub/movie-hub/android/settings.gradle), by a plugin with the id of com.android.application. 
+[        ] If you don't see a plugins block, your project was likely created with an older template version. In this case it is most likely defined in the top-level build.gradle file (/home/runner/work/movie-hub/movie-hub/android/build.gradle) by the following line in the dependencies block of the buildscript: "classpath 'com.android.tools.build:gradle:<version>'".
+[  +93 ms] FAILURE: Build failed with an exception.
 [        ] * Where:
 [        ] Build file '/home/runner/work/movie-hub/movie-hub/android/app/build.gradle.kts' line: 1
 [        ] * What went wrong:
 [        ] An exception occurred applying plugin request [id: 'dev.flutter.flutter-gradle-plugin']
 [        ] > Failed to apply plugin 'dev.flutter.flutter-gradle-plugin'.
-[        ]    > Error: Your project's Android Gradle Plugin version (Android Gradle Plugin version 8.7.3) is lower than Flutter's minimum supported version of Android Gradle Plugin version 8.11.1. Please upgrade your Android Gradle Plugin version. 
+[        ]    > Error: Your project's Kotlin version (2.1.0) is lower than Flutter's minimum supported version of 2.2.20. Please upgrade your Kotlin version. 
 [        ]      Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
-[        ]      Potential fix: Your project's AGP version is typically defined in the plugins block of the `settings.gradle` file (/home/runner/work/movie-hub/movie-hub/android/settings.gradle), by a plugin with the id of com.android.application. 
-[        ]      If you don't see a plugins block, your project was likely created with an older template version. In this case it is most likely defined in the top-level build.gradle file (/home/runner/work/movie-hub/movie-hub/android/build.gradle) by the following line in the dependencies block of the buildscript: "classpath 'com.android.tools.build:gradle:<version>'".
+[        ]      Potential fix: Your project's KGP version is typically defined in the plugins block of the `settings.gradle` file (/home/runner/work/movie-hub/movie-hub/android/settings.gradle), by a plugin with the id of org.jetbrains.kotlin.android. 
+[        ]      If you don't see a plugins block, your project was likely created with an older template version, in which case it is most likely defined in the top-level build.gradle file (/home/runner/work/movie-hub/movie-hub/android/build.gradle) by the ext.kotlin_version property.
 [        ] * Try:
-[        ] > Run with --debug option to get more log output.
+[   +1 ms] > Run with --debug option to get more log output.
 [        ] > Run with --scan to get full insights.
 [        ] > Get more help at https://help.gradle.org.
 [        ] * Exception is:
@@ -140,7 +143,7 @@
 [        ] 	at org.gradle.kotlin.dsl.execution.Interpreter.eval(Interpreter.kt:214)
 [        ] 	at org.gradle.kotlin.dsl.provider.StandardKotlinScriptEvaluator.evaluate(KotlinScriptEvaluator.kt:133)
 [        ] 	at org.gradle.kotlin.dsl.provider.KotlinScriptPluginFactory$create$1.invoke(KotlinScriptPluginFactory.kt:61)
-[  +88 ms] 	at org.gradle.kotlin.dsl.provider.KotlinScriptPluginFactory$create$1.invoke(KotlinScriptPluginFactory.kt:52)
+[        ] 	at org.gradle.kotlin.dsl.provider.KotlinScriptPluginFactory$create$1.invoke(KotlinScriptPluginFactory.kt:52)
 [        ] 	at org.gradle.kotlin.dsl.provider.KotlinScriptPlugin.apply(KotlinScriptPlugin.kt:35)
 [        ] 	at org.gradle.configuration.BuildOperationScriptPlugin$1.run(BuildOperationScriptPlugin.java:68)
 [        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:30)
@@ -198,12 +201,12 @@
 [        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:48)
 [        ] 	at org.gradle.configuration.BuildOperationFiringProjectsPreparer.prepareProjects(BuildOperationFiringProjectsPreparer.java:40)
 [        ] 	at org.gradle.initialization.VintageBuildModelController.lambda$prepareProjects$2(VintageBuildModelController.java:84)
-[        ] 	at org.gradle.internal.model.StateTransitionController.lambda$doTransition$14(StateTransitionController.java:255)
+[   +2 ms] 	at org.gradle.internal.model.StateTransitionController.lambda$doTransition$14(StateTransitionController.java:255)
 [        ] 	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:266)
 [        ] 	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:254)
 [        ] 	at org.gradle.internal.model.StateTransitionController.lambda$transitionIfNotPreviously$11(StateTransitionController.java:213)
 [        ] 	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:36)
-[   +1 ms] 	at org.gradle.internal.model.StateTransitionController.transitionIfNotPreviously(StateTransitionController.java:209)
+[        ] 	at org.gradle.internal.model.StateTransitionController.transitionIfNotPreviously(StateTransitionController.java:209)
 [        ] 	at org.gradle.initialization.VintageBuildModelController.prepareProjects(VintageBuildModelController.java:84)
 [        ] 	at org.gradle.initialization.VintageBuildModelController.prepareToScheduleTasks(VintageBuildModelController.java:71)
 [        ] 	at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$prepareToScheduleTasks$6(DefaultBuildLifecycleController.java:175)
@@ -306,10 +309,10 @@
 [        ] 	at org.gradle.plugin.use.resolve.internal.ClassPathPluginResolution.applyTo(ClassPathPluginResolution.java:50)
 [        ] 	at org.gradle.plugin.use.internal.DefaultPluginRequestApplicator$ApplyAction.apply(DefaultPluginRequestApplicator.java:160)
 [        ] 	... 254 more
-[        ] Caused by: org.gradle.internal.operations.BuildOperationInvocationException: Error: Your project's Android Gradle Plugin version (Android Gradle Plugin version 8.7.3) is lower than Flutter's minimum supported version of Android Gradle Plugin version 8.11.1. Please upgrade your Android Gradle Plugin version. 
+[        ] Caused by: org.gradle.internal.operations.BuildOperationInvocationException: Error: Your project's Kotlin version (2.1.0) is lower than Flutter's minimum supported version of 2.2.20. Please upgrade your Kotlin version. 
 [        ] Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
-[        ] Potential fix: Your project's AGP version is typically defined in the plugins block of the `settings.gradle` file (/home/runner/work/movie-hub/movie-hub/android/settings.gradle), by a plugin with the id of com.android.application. 
-[        ] If you don't see a plugins block, your project was likely created with an older template version. In this case it is most likely defined in the top-level build.gradle file (/home/runner/work/movie-hub/movie-hub/android/build.gradle) by the following line in the dependencies block of the buildscript: "classpath 'com.android.tools.build:gradle:<version>'".
+[        ] Potential fix: Your project's KGP version is typically defined in the plugins block of the `settings.gradle` file (/home/runner/work/movie-hub/movie-hub/android/settings.gradle), by a plugin with the id of org.jetbrains.kotlin.android. 
+[        ] If you don't see a plugins block, your project was likely created with an older template version, in which case it is most likely defined in the top-level build.gradle file (/home/runner/work/movie-hub/movie-hub/android/build.gradle) by the ext.kotlin_version property.
 [        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.throwAsBuildOperationInvocationException(DefaultBuildOperationRunner.java:198)
 [        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.access$100(DefaultBuildOperationRunner.java:25)
 [        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:76)
@@ -321,12 +324,12 @@
 [        ] 	at org.gradle.internal.code.DefaultUserCodeApplicationContext.apply(DefaultUserCodeApplicationContext.java:44)
 [        ] 	at org.gradle.api.internal.plugins.DefaultPluginManager.doApply(DefaultPluginManager.java:169)
 [        ] 	... 257 more
-[        ] Caused by: com.flutter.gradle.DependencyValidationException: Error: Your project's Android Gradle Plugin version (Android Gradle Plugin version 8.7.3) is lower than Flutter's minimum supported version of Android Gradle Plugin version 8.11.1. Please upgrade your Android Gradle Plugin version. 
+[        ] Caused by: com.flutter.gradle.DependencyValidationException: Error: Your project's Kotlin version (2.1.0) is lower than Flutter's minimum supported version of 2.2.20. Please upgrade your Kotlin version. 
 [        ] Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
-[        ] Potential fix: Your project's AGP version is typically defined in the plugins block of the `settings.gradle` file (/home/runner/work/movie-hub/movie-hub/android/settings.gradle), by a plugin with the id of com.android.application. 
-[        ] If you don't see a plugins block, your project was likely created with an older template version. In this case it is most likely defined in the top-level build.gradle file (/home/runner/work/movie-hub/movie-hub/android/build.gradle) by the following line in the dependencies block of the buildscript: "classpath 'com.android.tools.build:gradle:<version>'".
-[        ] 	at com.flutter.gradle.DependencyVersionChecker.checkAGPVersion$gradle(DependencyVersionChecker.kt:282)
-[        ] 	at com.flutter.gradle.DependencyVersionChecker.checkDependencyVersions(DependencyVersionChecker.kt:134)
+[        ] Potential fix: Your project's KGP version is typically defined in the plugins block of the `settings.gradle` file (/home/runner/work/movie-hub/movie-hub/android/settings.gradle), by a plugin with the id of org.jetbrains.kotlin.android. 
+[        ] If you don't see a plugins block, your project was likely created with an older template version, in which case it is most likely defined in the top-level build.gradle file (/home/runner/work/movie-hub/movie-hub/android/build.gradle) by the ext.kotlin_version property.
+[        ] 	at com.flutter.gradle.DependencyVersionChecker.checkKGPVersion$gradle(DependencyVersionChecker.kt:308)
+[        ] 	at com.flutter.gradle.DependencyVersionChecker.checkDependencyVersions(DependencyVersionChecker.kt:144)
 [        ] 	at com.flutter.gradle.FlutterPlugin.apply(FlutterPlugin.kt:176)
 [        ] 	at com.flutter.gradle.FlutterPlugin.apply(FlutterPlugin.kt:36)
 [        ] 	at org.gradle.api.internal.plugins.ImperativeOnlyPluginTarget.applyImperative(ImperativeOnlyPluginTarget.java:55)
@@ -338,12 +341,9 @@
 [        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:27)
 [        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
 [        ] 	... 264 more
-[        ] BUILD FAILED in 1m 17s
-[        ] Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
-[        ] You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
-[        ] For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+[   +2 ms] BUILD FAILED in 1m 25s
 [        ] 4 actionable tasks: 4 executed
-[ +426 ms] Running Gradle task 'assembleRelease'... (completed in 78.3s)
+[ +506 ms] Running Gradle task 'assembleRelease'... (completed in 85.9s)
 [   +2 ms] 
            ┌─ Flutter Fix ────────────────────────────────────────────────────────────────────────┐
            │ [!] Starting AGP 9+, only the new DSL interface will be read.                        │
@@ -359,11 +359,11 @@
            └──────────────────────────────────────────────────────────────────────────────────────┘
 
 [   +1 ms] executing: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64/bin/java --version
-[  +29 ms] Exit code 0 from: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64/bin/java --version
+[  +39 ms] Exit code 0 from: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64/bin/java --version
 [        ] openjdk 17.0.20.1 2026-08-18
            OpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)
            OpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)
-[   +3 ms] "flutter apk" took 78,672ms.
+[   +3 ms] "flutter apk" took 86,370ms.
 [   +2 ms] Gradle task assembleRelease failed with exit code 1
 [        ] 
            #0      throwToolExit (package:flutter_tools/src/base/common.dart:34:3)
@@ -397,4 +397,4 @@
 
 [        ] Running 1 shutdown hook
 [        ] Shutdown hooks complete
-[   +1 ms] exiting with code 1
+[        ] exiting with code 1
