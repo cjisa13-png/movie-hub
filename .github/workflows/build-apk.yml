@@ -1,0 +1,64 @@
+name: Compilar APK de Android
+
+# Se ejecuta al subir cambios a la rama principal y también manualmente
+# (botón "Run workflow" en la pestaña Actions de GitHub).
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+# Permite que el flujo cree una "Release" con el APK adjunto.
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Descarga el código del repositorio.
+      - name: Descargar el código
+        uses: actions/checkout@v4
+
+      # 2. Instala Java (necesario para compilar Android).
+      - name: Preparar Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      # 3. Instala Flutter (misma versión con la que se verificó el proyecto).
+      - name: Preparar Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          flutter-version: '3.47.5'
+          cache: true
+
+      # 4. Descarga las dependencias del proyecto.
+      - name: Descargar dependencias
+        run: flutter pub get
+
+      # 5. Compila el APK en modo release.
+      - name: Compilar APK
+        run: flutter build apk --release
+
+      # 6a. Sube el APK como "artefacto" (descargable desde la pestaña Actions).
+      - name: Guardar APK como artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: movie-hub-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+
+      # 6b. Publica el APK en una Release "latest" con enlace de descarga directo.
+      - name: Publicar en Releases
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Última versión (APK)
+          files: build/app/outputs/flutter-apk/app-release.apk
+          body: |
+            📱 **Movie Hub — APK para Android**
+
+            Descarga el archivo `app-release.apk` de aquí abajo desde tu móvil
+            e instálalo (tendrás que permitir "instalar apps de orígenes
+            desconocidos"). Al abrir la app, pega tu clave de TMDB.

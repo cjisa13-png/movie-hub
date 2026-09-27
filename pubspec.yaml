@@ -1,0 +1,53 @@
+name: movie_hub
+description: "Movie Discovery Hub - Encuentra dónde ver tus películas favoritas."
+publish_to: 'none'
+
+# Versión de la app (versión+build)
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+  flutter: ">=3.19.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # --- Iconos iOS ---
+  cupertino_icons: ^1.0.8
+
+  # --- Gestión de estado (State Management) ---
+  provider: ^6.1.2
+
+  # --- Llamadas HTTP a la API de TMDB ---
+  http: ^1.2.2
+
+  # --- Base de datos local para la Watchlist (favoritos) ---
+  sqflite: ^2.4.1
+  path: ^1.9.0
+
+  # --- Guardar preferencia de tema (claro/oscuro) ---
+  shared_preferences: ^2.3.3
+
+  # --- Reproductor de tráilers de YouTube embebido ---
+  # NOTA: se fija la serie 9.x a propósito. La 10.x es una reescritura con
+  # otra API (iframe) que rompería el código de trailer_player.dart.
+  youtube_player_flutter: '>=9.1.0 <10.0.0'
+
+  # --- Carga y caché de imágenes (pósters) ---
+  cached_network_image: ^3.4.1
+
+  # --- Efecto "shimmer" mientras cargan las imágenes/listas ---
+  shimmer: ^3.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Descomenta esto si añades imágenes propias en assets/images/
+  # assets:
+  #   - assets/images/
